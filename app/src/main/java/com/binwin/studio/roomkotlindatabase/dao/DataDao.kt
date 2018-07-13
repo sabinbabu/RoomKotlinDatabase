@@ -1,10 +1,7 @@
 package com.binwin.studio.roomkotlindatabase.dao
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
+import android.arch.persistence.room.*
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
-import android.arch.persistence.room.Query
 import com.binwin.studio.roomkotlindatabase.model.Data
 
 @Dao
@@ -16,6 +13,8 @@ interface DataDao {
     @Insert(onConflict = REPLACE)
     fun insert(weatherData: Data)
 
+//    @Update(onConflict = REPLACE)
+//    fun updateNote(repos: Data)
 
 //    @Insert
 //    fun insertNote(note: Data): Long
@@ -27,6 +26,4 @@ interface DataDao {
     @Delete
     fun deleteNote(note: Data)
 
-    @Delete
-    fun deleteNotes(vararg note: Data)
 }
